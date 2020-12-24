@@ -1,6 +1,7 @@
-Welcome to Aiomojang
+Overview
 ===============================
 Aiomojang is a asynchronous implementation of Mojang's API.
+
 
 Installation
 ===============================
