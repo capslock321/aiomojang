@@ -1,0 +1,1 @@
+from aiomojang.exceptions import BadRequestException

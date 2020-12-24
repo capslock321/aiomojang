@@ -1,0 +1,145 @@
+# -*- coding: utf-8 -*-
+"""
+MIT License
+
+Copyright (c) 2020 capslock321
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+from aiomojang.exceptions import BadRequestException, UserNotFound, ApiException
+import aiohttp
+import re
+from typing import Optional
+
+
+class User:
+
+    """
+    Gets information on a user's profile.
+
+    Attributes:
+        profile(str): The user's profile you want to search up, eg. User("SomeRandomPerson")
+        at(int): The person who had the name at the given timestamp. Defaults to 0
+
+    """
+
+    def __init__(self, profile: str, at: Optional[int] = 0):
+        self.profile = profile
+        self.at = at
+
+    @staticmethod
+    async def _process_uuid(uuid):
+        """
+          Removes - from the given statement, allowing input of uuids with - in them.
+          Returns:
+              str: The processed uuid.
+        """
+        uuid = re.sub(r"({-}*)", '', uuid)  # remove - from the uuid if there is any
+        return uuid
+
+    async def _create_connection(self, base):
+        """
+          Creates a connection with Mojang's API.
+          Returns:
+              dict: The json that is returned from Mojang.
+          Raises:
+              UserNotFound: If no user with these parameters can be found.
+        """
+        # used to create a connection using aiohttp
+        async with aiohttp.ClientSession() as session:
+            async with session.get(f'https://api.mojang.com/{await self._process_uuid(base)}') as resp:
+                if resp.status == 204:
+                    raise UserNotFound(f"the name: {self.profile}, was not found with the specified search parameters.")
+                return await resp.json()
+
+    @property
+    async def name(self) -> str:
+        """
+          Gets the name for the user.
+          Returns:
+              str: Returns the name of the user.
+          Raises:
+              BadRequestError: If no user with these parameters can be found.
+        """
+        connection = await self._create_connection(f'user/profile/{self.profile}/names')
+        try:
+            if 'error' in connection:
+                raise ApiException(f"{connection['errorMessage']}")
+            return connection[len(connection) - 1]['name']
+        except KeyError:
+            raise BadRequestException(connection['errorMessage'])
+
+    @property
+    async def uuid(self) -> str:
+        """
+           Gets the uuid for the user.
+           Returns:
+               str: Returns the uuid of the user.
+           Raises:
+              BadRequestError: If no user with these parameters can be found.
+        """
+        connection = await self._create_connection(f'/users/profiles/minecraft/{self.profile}?at={self.at}')
+        try:
+            if 'error' in connection:
+                raise ApiException(f"{connection['errorMessage']}")
+            return connection['id']
+        except KeyError:
+            raise BadRequestException(connection['errorMessage'])
+
+    async def get_history(self, num: Optional[int] = None) -> dict:
+        """
+           Gets the name history for the user.
+           Returns:
+               dict: Returns the name history for the given user at the given timestamp.
+        """
+        connection = await self._create_connection(f'user/profile/{await self.get_uuid()}/names')
+        if 'error' in connection:
+            raise ApiException(f"{connection['errorMessage']}")
+        if num is None:
+            return connection
+        return connection[num]
+
+    @property
+    async def is_legacy(self) -> bool:
+        """
+           Returns if the account is legacy.
+           Returns:
+               bool: Returns True if the account is legacy.
+        """
+        connection = await self._create_connection(f'/users/profiles/minecraft/{self.profile}?at={self.at}')
+        if 'error' in connection:
+            raise ApiException(f"{connection['errorMessage']}")
+        if 'legacy' in connection:
+            return True
+        return False
+
+    @property
+    async def is_demo(self) -> bool:
+        """
+           Returns if the account is a demo account (unpaid).
+           Returns:
+               bool: Returns True if the account is a demo account (unpaid).
+        """
+        connection = await self._create_connection(f'/users/profiles/minecraft/{self.profile}?at={self.at}')
+        if 'error' in connection:
+            raise ApiException(f"{connection['errorMessage']}")
+        if 'demo' in connection:
+            return True
+        return False
+
