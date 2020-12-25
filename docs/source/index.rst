@@ -62,7 +62,6 @@ Documentation
 =============================
 
 .. toctree::
-   :caption: Documentation
 
    ./user
 
