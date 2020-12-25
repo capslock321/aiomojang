@@ -24,6 +24,7 @@ Unix:
     
 Basic Code Usage:
 ===============================
+
 **Documentation can be found at:** https://aiomojang.readthedocs.io/en/latest/
 
 .. code-block:: python
