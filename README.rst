@@ -24,6 +24,8 @@ Unix:
     
 Basic Code Usage:
 ===============================
+**Documentation can be found at: **
+
 .. code-block:: python
     
     import aiomojang
