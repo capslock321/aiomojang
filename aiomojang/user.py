@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 """
 MIT License
 
@@ -22,14 +23,57 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
+
 from aiomojang.exceptions import BadRequestException, UserNotFound, ApiException
 import aiohttp
+import asyncio
 import re
 from typing import Optional
 
 
-class User:
+class Users:
 
+    @staticmethod
+    async def _send_payload(*queries):
+        print('fu')
+        async with aiohttp.ClientSession() as session:
+            payload = list(queries[:10])[0]
+            async with session.post(f'https://api.mojang.com/profiles/minecraft', json = payload) as resp:
+                return await resp.json()
+
+    """async def get_names(self, *queries) -> str:
+        payload = await self._send_payload(queries)
+        names = []
+        for item in payload:
+            try:
+                if 'error' in payload:
+                    raise ApiException(f"{payload['errorMessage']}")
+                names.append(item['name'])
+            except KeyError:
+                raise BadRequestException(payload['errorMessage'])
+        return names"""
+
+    async def get_uuids(self, *queries) -> str:
+        """
+           Gets the uuid for the user.
+           Returns:
+               str: Returns the uuid of the user.
+           Raises:
+              BadRequestError: If no user with these parameters can be found.
+        """
+        payload = await self._send_payload(queries)
+        uuids = []
+        for item in payload:
+            try:
+                if 'error' in payload:
+                    raise ApiException(f"{payload['errorMessage']}")
+                uuids.append(item['id'])
+            except KeyError:
+                raise BadRequestException(payload['errorMessage'])
+        return uuids
+
+
+class Player:
     """
     Gets information on a user's profile.
 
@@ -39,8 +83,8 @@ class User:
 
     """
 
-    def __init__(self, profile: str, at: Optional[int] = 0):
-        self.profile = profile
+    def __init__(self, *profiles: str, at: Optional[int] = 0):
+        self.profiles = profiles
         self.at = at
 
     @staticmethod
