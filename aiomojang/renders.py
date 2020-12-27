@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 """
 MIT License
 
@@ -27,6 +28,7 @@ import aiohttp
 import base64
 import json
 import re
+import asyncio
 import datetime
 from typing import Optional
 
@@ -36,7 +38,7 @@ class Render:
         Gets information on a skin or cape.
 
         Attributes:
-            player(str): The user's profile you want to search up, eg. User("SomeRandomPerson")
+            player(str): The user's profile you want to search up.
             unsigned(bool): If the request is unsigned.
 
     """
@@ -47,10 +49,20 @@ class Render:
 
     @staticmethod
     async def _process_uuid(uuid):
-        uuid = re.sub('({-}*)', '', uuid)  # remove - from the uuid if there is any
-        return uuid
+        uuid = uuid.strip('-')  # remove - from the uuid if there is any
+        return uuid.replace('-', '')
 
-    async def _create_connection(self):
+    @staticmethod
+    async def _get_player_id(player):
+        async with aiohttp.ClientSession() as session:
+            payload = [
+                player
+            ]
+            async with session.post(f'https://api.mojang.com/profiles/minecraft', json = payload) as resp:
+                data = await resp.json()
+                return data[0]['id']
+
+    async def _create_connection(self, query):
         """
           Creates a connection with Mojang's API.
           Returns:
@@ -58,7 +70,7 @@ class Render:
         """
         async with aiohttp.ClientSession() as session:
             async with session.get('https://sessionserver.mojang.com/session/minecraft/profile/'
-                                   f'{await self._process_uuid(self.player)}?unsigned={str(self.unsigned).lower()}') as resp:
+                                   f'{await self._process_uuid(query)}?unsigned={str(self.unsigned).lower()}') as resp:
                 return await resp.json()
 
     async def raw(self):
@@ -67,8 +79,13 @@ class Render:
           Returns:
               dict: The raw data.
         """
-        data = await self._create_connection()
-        skin = base64.b64decode(data['properties'][0]['value'])
+        try:
+            data = await self._create_connection(self.player)
+            skin = base64.b64decode(data['properties'][0]['value'])
+        except KeyError:
+            gp = await self._get_player_id(self.player)  # converts name to uuid
+            data = await self._create_connection(gp)
+            skin = base64.b64decode(data['properties'][0]['value'])
         return json.loads(skin.decode('ascii'))
 
     async def timestamp(self):
@@ -112,8 +129,16 @@ class Render:
 
 class Skin(Render):
 
-    def __init__(self, player, unsigned):
+    def __init__(self, player, unsigned: Optional[bool] = True):
         super().__init__(player, unsigned)
+
+    @property
+    async def model(self):
+        try:
+            info = await self.raw()
+            return info['textures']['SKIN']['metadata']['model']
+        except KeyError:
+            return "classic"
 
     @property
     async def id(self):
@@ -139,7 +164,7 @@ class Skin(Render):
 
 class Cape(Render):
 
-    def __init__(self, player, unsigned):
+    def __init__(self, player, unsigned: Optional[bool] = True):
         super().__init__(player, unsigned)
 
     @property
@@ -162,4 +187,7 @@ class Cape(Render):
         """
         info = await self.raw()
         return info['textures']['CAPE']['url']
+
+
+
 
