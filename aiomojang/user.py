@@ -26,7 +26,6 @@ SOFTWARE.
 
 from aiomojang.exceptions import BadRequestException, UserNotFound, ApiException
 import aiohttp
-import asyncio
 import re
 from typing import Optional
 
