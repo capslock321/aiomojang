@@ -58,11 +58,10 @@ Basic Code Usage:
         return await aiomojang.User("Hypermnesia").uuid
         # Output: 7e2ad381193e40e2adfe8df266134d8c
 
-Documentation
-=============================
 
 .. toctree::
    :maxdepth: 2
+   :caption: Documenation
 
    ./user
 
