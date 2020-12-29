@@ -1,4 +1,4 @@
-from aiomojang.exceptions import BadRequestException, IncorrectPayload, ApiException, MismatchedInputException, RequiredPayload, UserNotFound
+from aiomojang.exceptions import BadRequestException, IncorrectPayload, ApiException, RequiredPayload
 from aiomojang.misc import Statistics, BlockedServers
 from aiomojang.renders import Skin, Cape, Render
 from aiomojang.status import Status

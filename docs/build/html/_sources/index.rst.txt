@@ -48,21 +48,20 @@ Basic Code Usage:
     # you can get a user's name by providing his uuid
     async def get_name():
         # getting a user's name
-        return await aiomojang.User("7e2ad381193e40e2adfe8df266134d8c").name
+        return await aiomojang.Player("7e2ad381193e40e2adfe8df266134d8c").name
         # Output: Hypermnesia
 
 
     # you can get a user's uuid by providing his name
     async def get_uuid():
         # getting a user's uuid
-        return await aiomojang.User("Hypermnesia").uuid
+        return await aiomojang.Player("Hypermnesia").uuid
         # Output: 7e2ad381193e40e2adfe8df266134d8c
 
-Documentation
-=============================
 
 .. toctree::
-   :caption: Documentation
+   :maxdepth: 2
+   :caption: Documenation
 
    ./user
 

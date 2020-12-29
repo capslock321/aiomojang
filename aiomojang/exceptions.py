@@ -23,19 +23,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+
 class ApiException(Exception):
     pass
 
 
 class BadRequestException(ApiException):
-    pass
-
-
-class UserNotFound(ApiException):
-    pass
-
-
-class MismatchedInputException(ApiException):
     pass
 
 

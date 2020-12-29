@@ -82,7 +82,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Documenation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="user.html">User Documentation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Render Documentation</a><ul class="simple">
@@ -160,6 +160,75 @@
 <h1>Render Documentation<a class="headerlink" href="#render-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
+<dl class="py class">
+<dt id="aiomojang.Render">
+<em class="property">class </em><code class="sig-prename descclassname">aiomojang.</code><code class="sig-name descname">Render</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player</span></em>, <em class="sig-param"><span class="n">unsigned</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets information on a skin or cape.</p>
+<dl class="py attribute">
+<dt id="aiomojang.Render.player">
+<code class="sig-name descname">player</code><a class="headerlink" href="#aiomojang.Render.player" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user’s profile you want to search up.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="aiomojang.Render.unsigned">
+<code class="sig-name descname">unsigned</code><a class="headerlink" href="#aiomojang.Render.unsigned" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the request is unsigned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="aiomojang.Render.profile_id">
+<em class="property">async </em><code class="sig-name descname">profile_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Render.profile_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the profile’s uuid for the user being requested.
+:returns: The players uuid.
+:rtype: str</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="aiomojang.Render.profile_name">
+<em class="property">async </em><code class="sig-name descname">profile_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Render.profile_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the profile’s name for the user being requested.
+:returns: The players name.
+:rtype: str</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="aiomojang.Render.raw">
+<em class="property">async </em><code class="sig-name descname">raw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Render.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns raw json for a skin or a cape
+:returns: The raw data.
+:rtype: dict</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="aiomojang.Render.signature">
+<em class="property">async </em><code class="sig-name descname">signature</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Render.signature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the requester’s base64 signature.</p>
+<p>Will only work if unsigned is False.
+:returns: The base64 signature.
+:rtype: str</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="aiomojang.Render.timestamp">
+<em class="property">async </em><code class="sig-name descname">timestamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Render.timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the formatted timestamp in which the data has been requested at.
+:returns: The formatted timestamp.
+:rtype: str</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

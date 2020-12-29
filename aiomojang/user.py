@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from aiomojang.exceptions import BadRequestException, UserNotFound, ApiException
+from aiomojang.exceptions import BadRequestException, ApiException
 import aiohttp
 import re
 from typing import Optional
@@ -53,13 +53,6 @@ class Users:
         return names
 
     async def get_uuids(self, *queries) -> str:
-        """
-           Gets the uuid for the user.
-           Returns:
-               str: Returns the uuid of the user.
-           Raises:
-              BadRequestError: If no user with these parameters can be found.
-        """
         payload = await self._send_payload(queries)
         uuids = []
         for item in payload:
@@ -108,7 +101,7 @@ class Player:
         async with aiohttp.ClientSession() as session:
             async with session.get(f'https://api.mojang.com/{await self._process_uuid(base)}') as resp:
                 if resp.status == 204:
-                    raise UserNotFound(f"the name: {self.profiles}, was not found with the specified search parameters.")
+                    return None
                 return await resp.json()
 
     @property

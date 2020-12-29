@@ -5,5 +5,5 @@ Render Documentation
    :maxdepth: 2
    :caption: Home
 
-.. autoclass:: aiomojang.Renders
+.. autoclass:: aiomojang.Render
     :members:

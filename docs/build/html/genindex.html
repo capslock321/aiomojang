@@ -80,7 +80,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Documenation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="user.html">User Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="renders.html">Render Documentation</a></li>
@@ -161,6 +161,7 @@
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
@@ -175,7 +176,7 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.User.at">at (aiomojang.User attribute)</a>
+      <li><a href="user.html#aiomojang.Player.at">at (aiomojang.Player attribute)</a>
 </li>
       <li><a href="status.html#aiomojang.Status.auth">auth() (aiomojang.Status property)</a>
 </li>
@@ -195,7 +196,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="blocked.html#aiomojang.BlockedServers.get_blocked_servers">get_blocked_servers() (aiomojang.BlockedServers class method)</a>
 </li>
-      <li><a href="user.html#aiomojang.User.get_history">get_history() (aiomojang.User method)</a>
+      <li><a href="user.html#aiomojang.Player.get_history">get_history() (aiomojang.Player method)</a>
 </li>
       <li><a href="stats.html#aiomojang.Statistics.get_raw_stats">get_raw_stats() (aiomojang.Statistics method)</a>
 </li>
@@ -213,11 +214,11 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.User.is_demo">is_demo() (aiomojang.User property)</a>
+      <li><a href="user.html#aiomojang.Player.is_demo">is_demo() (aiomojang.Player property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.User.is_legacy">is_legacy() (aiomojang.User property)</a>
+      <li><a href="user.html#aiomojang.Player.is_legacy">is_legacy() (aiomojang.Player property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -237,7 +238,7 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.User.name">name() (aiomojang.User property)</a>
+      <li><a href="user.html#aiomojang.Player.name">name() (aiomojang.Player property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -245,7 +246,29 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.User.profile">profile (aiomojang.User attribute)</a>
+      <li><a href="renders.html#aiomojang.Render.player">player (aiomojang.Render attribute)</a>
+</li>
+      <li><a href="user.html#aiomojang.Player">Player (class in aiomojang)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="user.html#aiomojang.Player.profile">profile (aiomojang.Player attribute)</a>
+</li>
+      <li><a href="renders.html#aiomojang.Render.profile_id">profile_id() (aiomojang.Render method)</a>
+</li>
+      <li><a href="renders.html#aiomojang.Render.profile_name">profile_name() (aiomojang.Render method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="renders.html#aiomojang.Render.raw">raw() (aiomojang.Render method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="renders.html#aiomojang.Render">Render (class in aiomojang)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -259,6 +282,8 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="renders.html#aiomojang.Render.signature">signature() (aiomojang.Render method)</a>
+</li>
       <li><a href="stats.html#aiomojang.Statistics">Statistics (class in aiomojang)</a>
 </li>
       <li><a href="status.html#aiomojang.Status">Status (class in aiomojang)</a>
@@ -272,16 +297,22 @@
       <li><a href="status.html#aiomojang.Status.textures">textures() (aiomojang.Status property)</a>
 </li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="renders.html#aiomojang.Render.timestamp">timestamp() (aiomojang.Render method)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.User">User (class in aiomojang)</a>
+      <li><a href="renders.html#aiomojang.Render.unsigned">unsigned (aiomojang.Render attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.User.uuid">uuid() (aiomojang.User property)</a>
+      <li><a href="user.html#aiomojang.Users">Users (class in aiomojang)</a>
+</li>
+      <li><a href="user.html#aiomojang.Player.uuid">uuid() (aiomojang.Player property)</a>
 </li>
   </ul></td>
 </tr></table>

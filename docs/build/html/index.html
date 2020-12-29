@@ -81,7 +81,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <p class="caption"><span class="caption-text">Documenation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="user.html">User Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="renders.html">Render Documentation</a></li>
@@ -195,24 +195,22 @@
 <span class="c1"># you can get a user&#39;s name by providing his uuid</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">get_name</span><span class="p">():</span>
     <span class="c1"># getting a user&#39;s name</span>
-    <span class="k">return</span> <span class="k">await</span> <span class="n">aiomojang</span><span class="o">.</span><span class="n">User</span><span class="p">(</span><span class="s2">&quot;7e2ad381193e40e2adfe8df266134d8c&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">aiomojang</span><span class="o">.</span><span class="n">Player</span><span class="p">(</span><span class="s2">&quot;7e2ad381193e40e2adfe8df266134d8c&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
     <span class="c1"># Output: Hypermnesia</span>
 
 
 <span class="c1"># you can get a user&#39;s uuid by providing his name</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">get_uuid</span><span class="p">():</span>
     <span class="c1"># getting a user&#39;s uuid</span>
-    <span class="k">return</span> <span class="k">await</span> <span class="n">aiomojang</span><span class="o">.</span><span class="n">User</span><span class="p">(</span><span class="s2">&quot;Hypermnesia&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">uuid</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">aiomojang</span><span class="o">.</span><span class="n">Player</span><span class="p">(</span><span class="s2">&quot;Hypermnesia&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">uuid</span>
     <span class="c1"># Output: 7e2ad381193e40e2adfe8df266134d8c</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="documentation">
-<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Documentation</span></p>
+<p class="caption"><span class="caption-text">Documenation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user.html">User Documentation</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="user.html">User Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user.html#player">Player</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="renders.html">Render Documentation</a><ul class="simple">
