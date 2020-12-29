@@ -39,5 +39,5 @@ As such, it can take multiple users in the constructor and returns a list of the
 
 .. toctree::
 
-.. autoclass:: aiomojang.user.Users
+.. autoclass:: user.Users
     :members:

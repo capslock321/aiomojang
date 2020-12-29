@@ -182,12 +182,12 @@ return await stats.get_sale_velocity(“item_sold_minecraft”)  # Returns a flo
 <div class="toctree-wrapper compound">
 </div>
 <dl class="py class">
-<dt id="aiomojang.Statistics">
-<em class="property">class </em><code class="sig-prename descclassname">aiomojang.</code><code class="sig-name descname">Statistics</code><a class="headerlink" href="#aiomojang.Statistics" title="Permalink to this definition">¶</a></dt>
+<dt id="misc.Statistics">
+<em class="property">class </em><code class="sig-prename descclassname">misc.</code><code class="sig-name descname">Statistics</code><a class="headerlink" href="#misc.Statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get Mojang statistics given a payload.</p>
 <dl class="py method">
-<dt id="aiomojang.Statistics.get_raw_stats">
-<em class="property">async </em><code class="sig-name descname">get_raw_stats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">payload</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Statistics.get_raw_stats" title="Permalink to this definition">¶</a></dt>
+<dt id="misc.Statistics.get_raw_stats">
+<em class="property">async </em><code class="sig-name descname">get_raw_stats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">payload</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#misc.Statistics.get_raw_stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the raw statistics for the specified payload.
 :returns: The raw json.
 :rtype: dict</p>
@@ -199,8 +199,8 @@ return await stats.get_sale_velocity(“item_sold_minecraft”)  # Returns a flo
 </dd></dl>
 
 <dl class="py method">
-<dt id="aiomojang.Statistics.get_sale_velocity">
-<em class="property">async </em><code class="sig-name descname">get_sale_velocity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">payload</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Statistics.get_sale_velocity" title="Permalink to this definition">¶</a></dt>
+<dt id="misc.Statistics.get_sale_velocity">
+<em class="property">async </em><code class="sig-name descname">get_sale_velocity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">payload</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#misc.Statistics.get_sale_velocity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the sale velocity of the given payload.
 :returns: The sale velocity.
 :rtype: int</p>
@@ -212,8 +212,8 @@ return await stats.get_sale_velocity(“item_sold_minecraft”)  # Returns a flo
 </dd></dl>
 
 <dl class="py method">
-<dt id="aiomojang.Statistics.get_sales_today">
-<em class="property">async </em><code class="sig-name descname">get_sales_today</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">payload</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Statistics.get_sales_today" title="Permalink to this definition">¶</a></dt>
+<dt id="misc.Statistics.get_sales_today">
+<em class="property">async </em><code class="sig-name descname">get_sales_today</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">payload</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#misc.Statistics.get_sales_today" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the total amount of sales in the past 24 hours.
 :returns: The total amount of sales in the past 24 hours.
 :rtype: int</p>
@@ -225,8 +225,8 @@ return await stats.get_sale_velocity(“item_sold_minecraft”)  # Returns a flo
 </dd></dl>
 
 <dl class="py method">
-<dt id="aiomojang.Statistics.get_total">
-<em class="property">async </em><code class="sig-name descname">get_total</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">payload</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Statistics.get_total" title="Permalink to this definition">¶</a></dt>
+<dt id="misc.Statistics.get_total">
+<em class="property">async </em><code class="sig-name descname">get_total</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">payload</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#misc.Statistics.get_total" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the total amount of sales for the specified payload.
 :returns: The total amount of sales.
 :rtype: int</p>
