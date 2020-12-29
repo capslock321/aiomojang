@@ -151,7 +151,7 @@ class Player:
            Returns:
                dict: Returns the name history for the given user at the given timestamp.
         """
-        connection = await self._create_connection(f'user/profile/{await self.get_uuid()}/names')
+        connection = await self._create_connection(f'user/profile/{await self.uuid}/names')
         if 'error' in connection:
             raise ApiException(f"{connection['errorMessage']}")
         if num is None:
