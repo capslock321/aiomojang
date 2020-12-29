@@ -40,7 +40,7 @@ class Users:
             async with session.post(f'https://api.mojang.com/profiles/minecraft', json = payload) as resp:
                 return await resp.json()
 
-    """async def get_names(self, *queries) -> str:
+    async def get_names(self, *queries) -> str:
         payload = await self._send_payload(queries)
         names = []
         for item in payload:
@@ -50,7 +50,7 @@ class Users:
                 names.append(item['name'])
             except KeyError:
                 raise BadRequestException(payload['errorMessage'])
-        return names"""
+        return names
 
     async def get_uuids(self, *queries) -> str:
         """
@@ -82,7 +82,7 @@ class Player:
 
     """
 
-    def __init__(self, *profiles: str, at: Optional[int] = 0):
+    def __init__(self, profiles: str, at: Optional[int] = 0):
         self.profiles = profiles
         self.at = at
 
