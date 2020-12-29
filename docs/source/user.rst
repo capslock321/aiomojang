@@ -25,15 +25,17 @@ This section has 2 classes, Users and Players.
 Player
 ------------------
 This focuses on individual players, and will take only one name.
+.. toctree::
 
 .. autoclass:: aiomojang.Player
-    :members:
+   :members:
 
 Users
 ------------------
 
 This class focuses on getting information on multiple users.
 As such, it can take multiple users in the __init__ and returns a list of the requested information.
+.. toctree::
 
 .. autoclass:: aiomojang.Users
-    :members:
+   :members:

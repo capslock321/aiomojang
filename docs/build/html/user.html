@@ -181,108 +181,32 @@ This section has 2 classes, Users and Players.</p>
 </dl>
 <div class="section" id="player">
 <h2>Player<a class="headerlink" href="#player" title="Permalink to this headline">¶</a></h2>
-<p>This focuses on individual players, and will take only one name.</p>
-<dl class="py class">
-<dt id="aiomojang.Player">
-<em class="property">class </em><code class="sig-prename descclassname">aiomojang.</code><code class="sig-name descname">Player</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">profiles</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">at</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Player" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets information on a user’s profile.</p>
-<dl class="py attribute">
-<dt id="aiomojang.Player.profile">
-<code class="sig-name descname">profile</code><a class="headerlink" href="#aiomojang.Player.profile" title="Permalink to this definition">¶</a></dt>
-<dd><p>The user’s profile you want to search up, eg. User(“SomeRandomPerson”)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>str</p>
-</dd>
+<p>This focuses on individual players, and will take only one name.
+.. toctree:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">autoclass</span><span class="p">::</span> <span class="n">aiomojang</span><span class="o">.</span><span class="n">Player</span>
+</pre></div>
+</div>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">members</dt>
+<dd class="field-odd"><p></p></dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="aiomojang.Player.at">
-<code class="sig-name descname">at</code><a class="headerlink" href="#aiomojang.Player.at" title="Permalink to this definition">¶</a></dt>
-<dd><p>The person who had the name at the given timestamp. Defaults to 0</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="aiomojang.Player.get_history">
-<em class="property">async </em><code class="sig-name descname">get_history</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#aiomojang.Player.get_history" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the name history for the user.
-:returns: Returns the name history for the given user at the given timestamp.
-:rtype: dict</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="aiomojang.Player.is_demo">
-<em class="property">property </em><code class="sig-name descname">is_demo</code><a class="headerlink" href="#aiomojang.Player.is_demo" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns if the account is a demo account (unpaid).
-:returns: Returns True if the account is a demo account (unpaid).
-:rtype: bool</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="aiomojang.Player.is_legacy">
-<em class="property">property </em><code class="sig-name descname">is_legacy</code><a class="headerlink" href="#aiomojang.Player.is_legacy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns if the account is legacy.
-:returns: Returns True if the account is legacy.
-:rtype: bool</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="aiomojang.Player.name">
-<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#aiomojang.Player.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the name for the user.
-:returns: Returns the name of the user.
-:rtype: str</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>BadRequestError</strong> – If no user with these parameters can be found.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="aiomojang.Player.uuid">
-<em class="property">property </em><code class="sig-name descname">uuid</code><a class="headerlink" href="#aiomojang.Player.uuid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the uuid for the user.
-:returns: Returns the uuid of the user.
-:rtype: str</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>BadRequestError</strong> – If no user with these parameters can be found.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+</div></blockquote>
 </div>
 <div class="section" id="users">
 <h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
 <p>This class focuses on getting information on multiple users.
-As such, it can take multiple users in the __init__ and returns a list of the requested information.</p>
-<dl class="py class">
-<dt id="aiomojang.Users">
-<em class="property">class </em><code class="sig-prename descclassname">aiomojang.</code><code class="sig-name descname">Users</code><a class="headerlink" href="#aiomojang.Users" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
-<dt id="aiomojang.Users.get_uuids">
-<em class="property">async </em><code class="sig-name descname">get_uuids</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">queries</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#aiomojang.Users.get_uuids" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the uuid for the user.
-:returns: Returns the uuid of the user.
-:rtype: str</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>BadRequestError</strong> – If no user with these parameters can be found.</p>
-</dd>
+As such, it can take multiple users in the __init__ and returns a list of the requested information.
+.. toctree:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">autoclass</span><span class="p">::</span> <span class="n">aiomojang</span><span class="o">.</span><span class="n">Users</span>
+</pre></div>
+</div>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">members</dt>
+<dd class="field-odd"><p></p></dd>
 </dl>
-</dd></dl>
-
-</dd></dl>
-
+</div></blockquote>
 </div>
 </div>
 
