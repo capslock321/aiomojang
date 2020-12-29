@@ -108,7 +108,7 @@ class Player:
         async with aiohttp.ClientSession() as session:
             async with session.get(f'https://api.mojang.com/{await self._process_uuid(base)}') as resp:
                 if resp.status == 204:
-                    raise UserNotFound(f"the name: {self.profile}, was not found with the specified search parameters.")
+                    raise UserNotFound(f"the name: {self.profiles}, was not found with the specified search parameters.")
                 return await resp.json()
 
     @property
