@@ -85,9 +85,8 @@
               <p class="caption"><span class="caption-text">Documenation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">User Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#player">Player</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#player">Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#users">Users</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="renders.html">Render Documentation</a></li>
@@ -162,14 +161,7 @@
   <div class="section" id="user-documentation">
 <h1>User Documentation<a class="headerlink" href="#user-documentation" title="Permalink to this headline">¶</a></h1>
 <p>This section of this wrapper focuses on player names, uuids and name history.
-This section has 2 classes, Users and Players.
-Users
-——————</p>
-<p>This class focuses on getting information on multiple users.
-As such, it can take multiple users in the __init__ and returns a list of the requested information.</p>
-<div class="section" id="player">
-<h2>Player<a class="headerlink" href="#player" title="Permalink to this headline">¶</a></h2>
-<p>This focuses on individual players, and will take only one name.</p>
+This section has 2 classes, Users and Players.</p>
 <dl>
 <dt><strong>Code Example:</strong></dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">aiomojang</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
@@ -188,8 +180,9 @@ As such, it can take multiple users in the __init__ and returns a list of the re
 </div>
 </dd>
 </dl>
-<div class="toctree-wrapper compound">
-</div>
+<div class="section" id="player">
+<h2>Player<a class="headerlink" href="#player" title="Permalink to this headline">¶</a></h2>
+<p>This focuses on individual players, and will take only one name.</p>
 <dl class="py class">
 <dt id="aiomojang.Player">
 <em class="property">class </em><code class="sig-prename descclassname">aiomojang.</code><code class="sig-name descname">Player</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">profiles</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">at</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.Player" title="Permalink to this definition">¶</a></dt>
@@ -268,6 +261,11 @@ As such, it can take multiple users in the __init__ and returns a list of the re
 
 </dd></dl>
 
+</div>
+<div class="section" id="users">
+<h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
+<p>This class focuses on getting information on multiple users.
+As such, it can take multiple users in the __init__ and returns a list of the requested information.</p>
 <dl class="py class">
 <dt id="aiomojang.Users">
 <em class="property">class </em><code class="sig-prename descclassname">aiomojang.</code><code class="sig-name descname">Users</code><a class="headerlink" href="#aiomojang.Users" title="Permalink to this definition">¶</a></dt>
