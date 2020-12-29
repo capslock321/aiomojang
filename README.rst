@@ -1,3 +1,7 @@
+.. image:: https://readthedocs.org/projects/aiomojang/badge/?version=master
+    :target: https://aiomojang.readthedocs.io/en/master/?badge=master
+    :alt: Documentation Status
+
 Overview
 ===============================
 Aiomojang is a asynchronous implementation of Mojang's API.
