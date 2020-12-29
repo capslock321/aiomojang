@@ -7,7 +7,7 @@ This section has 2 classes, Users and Players.
 
 .. code-block:: python
 
-    #import aiomojang
+    import aiomojang
     import asyncio
 
 
