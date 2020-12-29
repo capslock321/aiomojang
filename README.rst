@@ -19,7 +19,7 @@ Unix:
 ------------------
 .. code-block:: bash
     
-    pip3 install -U git+https://github.com/capslock321/namemc.git
+    pip3 install -U git+https://github.com/capslock321/aiomojang.git
     
     
 Basic Code Usage:
