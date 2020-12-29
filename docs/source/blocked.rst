@@ -7,5 +7,5 @@ This has only one class method.
    :maxdepth: 2
    :caption: Home
 
-.. autoclass:: aiomojang.BlockedServers
+.. automodule:: aiomojang.BlockedServers
     :members:

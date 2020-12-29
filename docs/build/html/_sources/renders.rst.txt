@@ -7,3 +7,9 @@ Render Documentation
 
 .. autoclass:: aiomojang.Render
     :members:
+
+.. autoclass:: aiomojang.Skin
+    :members:
+
+.. autoclass:: aiomojang.Cape
+    :members:
