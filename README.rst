@@ -1,4 +1,5 @@
 [![Documentation Status] (https://readthedocs.org/projects/aiomojang/badge/?version=master)](https://aiomojang.readthedocs.io/en/master/?badge=master)
+
 Overview
 ===============================
 Aiomojang is a asynchronous implementation of Mojang's API.
