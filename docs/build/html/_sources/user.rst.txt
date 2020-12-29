@@ -26,7 +26,7 @@ Player
 ------------------
 This focuses on individual players, and will take only one name.
 
-.. autoclass:: aiomojang.user.Player
+.. autoclass:: aiomojang.Player
     :members:
 
 Users
@@ -35,5 +35,5 @@ Users
 This class focuses on getting information on multiple users.
 As such, it can take multiple users in the __init__ and returns a list of the requested information.
 
-.. autoclass:: aiomojang.user.Users
+.. autoclass:: aiomojang.Users
     :members:
