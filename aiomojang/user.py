@@ -120,7 +120,7 @@ class Player:
           Raises:
               BadRequestError: If no user with these parameters can be found.
         """
-        connection = await self._create_connection(f'user/profile/{self.profile}/names')
+        connection = await self._create_connection(f'user/profile/{self.profiles}/names')
         try:
             if 'error' in connection:
                 raise ApiException(f"{connection['errorMessage']}")
@@ -137,7 +137,7 @@ class Player:
            Raises:
               BadRequestError: If no user with these parameters can be found.
         """
-        connection = await self._create_connection(f'/users/profiles/minecraft/{self.profile}?at={self.at}')
+        connection = await self._create_connection(f'/users/profiles/minecraft/{self.profiles}?at={self.at}')
         try:
             if 'error' in connection:
                 raise ApiException(f"{connection['errorMessage']}")
@@ -165,7 +165,7 @@ class Player:
            Returns:
                bool: Returns True if the account is legacy.
         """
-        connection = await self._create_connection(f'/users/profiles/minecraft/{self.profile}?at={self.at}')
+        connection = await self._create_connection(f'/users/profiles/minecraft/{self.profiles}?at={self.at}')
         if 'error' in connection:
             raise ApiException(f"{connection['errorMessage']}")
         if 'legacy' in connection:
@@ -179,7 +179,7 @@ class Player:
            Returns:
                bool: Returns True if the account is a demo account (unpaid).
         """
-        connection = await self._create_connection(f'/users/profiles/minecraft/{self.profile}?at={self.at}')
+        connection = await self._create_connection(f'/users/profiles/minecraft/{self.profiles}?at={self.at}')
         if 'error' in connection:
             raise ApiException(f"{connection['errorMessage']}")
         if 'demo' in connection:
