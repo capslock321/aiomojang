@@ -158,27 +158,26 @@
   <div class="section" id="statistics-documentation">
 <h1>Statistics Documentation<a class="headerlink" href="#statistics-documentation" title="Permalink to this headline">¶</a></h1>
 <p>This focuses on getting Mojang statistics.</p>
-<p><strong>Basic Example:</strong>
-.. code-block:: python</p>
-<blockquote>
-<div><p>import aiomojang
-import asyncio</p>
-<dl class="simple">
-<dt>async def get_mojang_statistics():</dt><dd><p># You can get Mojang statistics with aiomojang.Statistics()
-stats = aiomojang.Statistics()
-# Using any function under aiomojang.Statistics() requires a payload
-# The payload can be of the following:
-#    item_sold_minecraft
-#    prepaid_card_redeemed_minecraft
-#    item_sold_cobalt
-#    item_sold_scrolls
-#    prepaid_card_redeemed_cobalt
-#    item_sold_dungeons
-return await stats.get_sale_velocity(“item_sold_minecraft”)  # Returns a float.</p>
-</dd>
-</dl>
-<p>asyncio.run(get_mojang_statistics())  # Running the function</p>
-</div></blockquote>
+<p><strong>Basic Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">aiomojang</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get_mojang_statistics</span><span class="p">():</span>
+    <span class="c1"># You can get Mojang statistics with aiomojang.Statistics()</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">aiomojang</span><span class="o">.</span><span class="n">Statistics</span><span class="p">()</span>
+    <span class="c1"># Using any function under aiomojang.Statistics() requires a payload</span>
+    <span class="c1"># The payload can be of the following:</span>
+    <span class="c1">#    item_sold_minecraft</span>
+    <span class="c1">#    prepaid_card_redeemed_minecraft</span>
+    <span class="c1">#    item_sold_cobalt</span>
+    <span class="c1">#    item_sold_scrolls</span>
+    <span class="c1">#    prepaid_card_redeemed_cobalt</span>
+    <span class="c1">#    item_sold_dungeons</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">stats</span><span class="o">.</span><span class="n">get_sale_velocity</span><span class="p">(</span><span class="s2">&quot;item_sold_minecraft&quot;</span><span class="p">)</span>  <span class="c1"># Returns a float.</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">get_mojang_statistics</span><span class="p">())</span>  <span class="c1"># Running the function</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <dl class="py class">

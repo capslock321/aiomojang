@@ -171,11 +171,11 @@ This section has 2 classes, Users and Players.</p>
 
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">get_user_history</span><span class="p">():</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="n">aiomojang</span><span class="o">.</span><span class="n">Player</span><span class="p">(</span><span class="s2">&quot;Example&quot;</span><span class="p">)</span>  <span class="c1"># You can get a users information by passing it into the class.</span>
-    <span class="c1"># you can get a user&#39;s uuid using: aiomojang.Player(&quot;Name&quot;).uuid</span>
-    <span class="c1"># you can get a user&#39;s name using: aiomojang.Player(&quot;Name&quot;).name</span>
-    <span class="c1"># However, you CANNOT run .uuid with a uuid and CANNOT run .name with a name.</span>
-    <span class="k">return</span> <span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">get_history</span><span class="p">()</span>  <span class="c1"># you can get the user&#39;s name history with get_history()</span>
+ <span class="n">user</span> <span class="o">=</span> <span class="n">aiomojang</span><span class="o">.</span><span class="n">Player</span><span class="p">(</span><span class="s2">&quot;Example&quot;</span><span class="p">)</span>  <span class="c1"># You can get a users information by passing it into the class.</span>
+ <span class="c1"># you can get a user&#39;s uuid using: aiomojang.Player(&quot;Name&quot;).uuid</span>
+ <span class="c1"># you can get a user&#39;s name using: aiomojang.Player(&quot;Name&quot;).name</span>
+ <span class="c1"># However, you CANNOT run .uuid with a uuid and CANNOT run .name with a name.</span>
+ <span class="k">return</span> <span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">get_history</span><span class="p">()</span>  <span class="c1"># you can get the user&#39;s name history with get_history()</span>
 
 
 <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">get_user_history</span><span class="p">())</span>  <span class="c1"># Running the function</span>
