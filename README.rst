@@ -13,13 +13,13 @@ Windows:
 ------------------
 .. code-block:: bash
     
-    python -3 pip install git+https://github.com/capslock321/aiomojang.git
+    python -3 pip install -U git+https://github.com/capslock321/aiomojang.git
     
 Unix:
 ------------------
 .. code-block:: bash
     
-    pip3 install git+https://github.com/capslock321/namemc.git
+    pip3 install -U git+https://github.com/capslock321/namemc.git
     
     
 Basic Code Usage:
