@@ -1,4 +1,4 @@
-[![Documentation Status] (https://readthedocs.org/projects/aiomojang/badge/?version=master)](https://aiomojang.readthedocs.io/en/master/?badge=master)
+[![Documentation Status](https://readthedocs.org/projects/aiomojang/badge/?version=master)](https://aiomojang.readthedocs.io/en/master/?badge=master)
 
 Overview
 ===============================
