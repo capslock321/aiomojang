@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="aiomojang",
-    version="0.5",
+    version="0.2",
     author="capslock321",
     description="A Asynchronous python wrapper of Mojangs API",
     url="https://github.com/capslock321/aiomojang/",
