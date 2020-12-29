@@ -1,7 +1,7 @@
 Overview
 ===============================
 Aiomojang is a asynchronous implementation of Mojang's API.
-
+**This module has not been tested well yet.**
 It is designed to be simple to use and easy understanding.
 
 
