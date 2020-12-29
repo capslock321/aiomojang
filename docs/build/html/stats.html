@@ -86,10 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="user.html">User Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="renders.html">Render Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status Documentation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Statistics Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage:</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Statistics Documentation</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="blocked.html">Blocked Servers Documentation</a></li>
@@ -161,8 +158,27 @@
   <div class="section" id="statistics-documentation">
 <h1>Statistics Documentation<a class="headerlink" href="#statistics-documentation" title="Permalink to this headline">¶</a></h1>
 <p>This focuses on getting Mojang statistics.</p>
-<div class="section" id="basic-usage">
-<h2>Basic Usage:<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
+<p><strong>Basic Example:</strong>
+.. code-block:: python</p>
+<blockquote>
+<div><p>import aiomojang
+import asyncio</p>
+<dl class="simple">
+<dt>async def get_mojang_statistics():</dt><dd><p># You can get Mojang statistics with aiomojang.Statistics()
+stats = aiomojang.Statistics()
+# Using any function under aiomojang.Statistics() requires a payload
+# The payload can be of the following:
+#    item_sold_minecraft
+#    prepaid_card_redeemed_minecraft
+#    item_sold_cobalt
+#    item_sold_scrolls
+#    prepaid_card_redeemed_cobalt
+#    item_sold_dungeons
+return await stats.get_sale_velocity(“item_sold_minecraft”)  # Returns a float.</p>
+</dd>
+</dl>
+<p>asyncio.run(get_mojang_statistics())  # Running the function</p>
+</div></blockquote>
 <div class="toctree-wrapper compound">
 </div>
 <dl class="py class">
@@ -223,7 +239,6 @@
 
 </dd></dl>
 
-</div>
 </div>
 
 

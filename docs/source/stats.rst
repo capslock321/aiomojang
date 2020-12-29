@@ -2,8 +2,7 @@ Statistics Documentation
 =====================================
 This focuses on getting Mojang statistics.
 
-Basic Usage:
----------------------------
+**Basic Example:**
 .. code-block:: python
     import aiomojang
     import asyncio
