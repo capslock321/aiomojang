@@ -1,4 +1,6 @@
-[![Documentation Status](https://readthedocs.org/projects/aiomojang/badge/?version=master)](https://aiomojang.readthedocs.io/en/master/?badge=master)
+.. image:: https://readthedocs.org/projects/aiomojang/badge/?version=master
+    :target: https://aiomojang.readthedocs.io/en/master/?badge=master
+    :alt: Documentation Status
 
 Overview
 ===============================
