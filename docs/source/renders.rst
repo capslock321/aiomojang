@@ -22,10 +22,6 @@ This does not include optifine capes.
     asyncio.run(get_user_skins())  # Running the function
 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Home
-
 Render
 --------------------
 The base class, it handles things other than skins and capes such as:
