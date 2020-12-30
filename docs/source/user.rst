@@ -37,7 +37,5 @@ Users
 This class focuses on getting information on multiple users.
 As such, it can take multiple users in the constructor and returns a list of the requested information.
 
-.. toctree::
-
 .. autoclass:: aiomojang.user.Users
     :members:
