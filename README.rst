@@ -17,13 +17,14 @@ The best way to install this is to user pip to install this repository.
 
 Windows:
 ------------------
-**Stable:**
+
+**Stable Release:**
 
 .. code-block:: bash
     
     pip install -U aiomojang
     
-**Latest:**
+**Latest Release:**
 
 .. code-block:: bash
     
@@ -31,13 +32,14 @@ Windows:
     
 Unix:
 ------------------
-**Stable:**
+
+**Stable Release:**
 
 .. code-block:: bash
     
     pip3 install -U aiomojang
 
-**Latest:**
+**Latest Release:**
 
 .. code-block:: bash
     
