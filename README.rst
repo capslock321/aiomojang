@@ -10,6 +10,7 @@ Overview
 ===============================
     
 Aiomojang is a asynchronous implementation of Mojang's API, designed to be simple to use and easy understanding.
+:raw-html:`<br />`
 It makes use of the await and async keywords introduced in Python 3.5 **(PEP 492)**.
 
 Installation
