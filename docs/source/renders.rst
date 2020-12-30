@@ -32,6 +32,7 @@ The base class, it handles things other than skins and capes such as:
     * The base64 signature if enabled.
 
 .. autoclass:: aiomojang.renders.Render
+    :inherited-members:
     :members:
 
 Skin

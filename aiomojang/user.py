@@ -31,16 +31,30 @@ from typing import Optional
 
 
 class Users:
+    """
+    Gets information on a list of users.
+    """
 
     @staticmethod
     async def _send_payload(*queries):
-        print('fu')
+        """
+          Sends a request to Mojang's API.
+
+          If more than 10 names are provided, only the first ten will be sent.
+          Returns:
+              dict: The json that is returned from Mojang.
+        """
         async with aiohttp.ClientSession() as session:
             payload = list(queries[:10])[0]
             async with session.post(f'https://api.mojang.com/profiles/minecraft', json = payload) as resp:
                 return await resp.json()
 
-    async def get_names(self, *queries) -> str:
+    async def get_names(self, *queries) -> list:
+        """
+          Returns a list of names obtained using Mojang's API.
+          Returns:
+              list: The names obtained.
+        """
         payload = await self._send_payload(queries)
         names = []
         for item in payload:
@@ -52,7 +66,12 @@ class Users:
                 raise BadRequestException(payload['errorMessage'])
         return names
 
-    async def get_uuids(self, *queries) -> str:
+    async def get_uuids(self, *queries) -> list:
+        """
+          Returns a list of uuids obtained using Mojang's API.
+          Returns:
+              list: The uuids obtained.
+        """
         payload = await self._send_payload(queries)
         uuids = []
         for item in payload:
@@ -94,8 +113,6 @@ class Player:
           Creates a connection with Mojang's API.
           Returns:
               dict: The json that is returned from Mojang.
-          Raises:
-              UserNotFound: If no user with these parameters can be found.
         """
         # used to create a connection using aiohttp
         async with aiohttp.ClientSession() as session:
