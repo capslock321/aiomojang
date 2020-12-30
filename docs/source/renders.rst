@@ -31,7 +31,7 @@ The base class, it handles things other than skins and capes such as:
     * Date the information was accessed.
     * The base64 signature if enabled.
 
-.. autoclass:: renders.Render
+.. autoclass:: aiomojang.renders.Render
     :members:
 
 Skin
