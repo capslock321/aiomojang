@@ -1,3 +1,5 @@
+Overview
+===============================
 .. image:: https://readthedocs.org/projects/aiomojang/badge/?version=master
     :target: https://aiomojang.readthedocs.io/en/master/?badge=master
     :alt: Documentation Status
@@ -5,9 +7,6 @@
     :alt: PyPI
 .. image:: https://img.shields.io/github/license/capslock321/aiomojang   
     :alt: GitHub
-    
-Overview
-===============================
 Aiomojang is a asynchronous implementation of Mojang's API.
 
 It is designed to be simple to use and easy understanding.
