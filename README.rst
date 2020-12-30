@@ -8,6 +8,8 @@
 
 Overview
 ===============================
+.. role:: raw-html(raw)
+    :format: html
     
 Aiomojang is a asynchronous implementation of Mojang's API, designed to be simple to use and easy understanding.
 :raw-html:`<br />`
