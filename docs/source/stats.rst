@@ -28,5 +28,5 @@ This focuses on getting Mojang statistics.
    :maxdepth: 2
    :caption: Home
 
-.. autoclass:: misc.Statistics
+.. autoclass:: aimojang.misc.Statistics
     :members:
