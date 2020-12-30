@@ -1,10 +1,10 @@
-.. image:: https://readthedocs.org/projects/aiomojang/badge/?version=master 
-    :target: https://aiomojang.readthedocs.io/en/master/?badge=master 
-    :alt: Documentation Status 
-.. image:: https://img.shields.io/pypi/v/aiomojang?color=red&label=aiomojang  
-    :alt: PyPI 
-.. image:: https://img.shields.io/github/license/capslock321/aiomojang 
-    :alt: GitHub 
+.. image:: https://readthedocs.org/projects/aiomojang/badge/?version=master
+    :target: https://aiomojang.readthedocs.io/en/master/?badge=master
+    :alt: Documentation Status
+.. image:: https://img.shields.io/pypi/v/aiomojang?color=red&label=aiomojang
+    :alt: PyPI
+.. image:: https://img.shields.io/github/license/capslock321/aiomojang
+    :alt: GitHub
 
 Overview
 ===============================
