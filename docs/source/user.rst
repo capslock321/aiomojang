@@ -26,9 +26,9 @@ Player
 ------------------
 This focuses on individual players, and will take only one name.
 
-.. automodule:: user
-    :exclude: user.Users
 
+.. autoclass:: user.Player
+    :members:
 
 Users
 ------------------
@@ -36,8 +36,7 @@ Users
 This class focuses on getting information on multiple users.
 As such, it can take multiple users in the constructor and returns a list of the requested information.
 
-
-.. automodule:: user
-    :exclude: user.Player
+.. autoclass:: user.Users
+    :members:
 
 
