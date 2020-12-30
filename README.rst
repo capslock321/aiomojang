@@ -18,11 +18,13 @@ The best way to install this is to user pip to install this repository.
 Windows:
 ------------------
 **Stable:**
+
 .. code-block:: bash
     
     pip install -U aiomojang
     
 **Latest:**
+
 .. code-block:: bash
     
     python -3 pip install -U git+https://github.com/capslock321/aiomojang.git
@@ -30,11 +32,13 @@ Windows:
 Unix:
 ------------------
 **Stable:**
+
 .. code-block:: bash
     
     pip3 install -U aiomojang
 
 **Latest:**
+
 .. code-block:: bash
     
     pip3 install -U git+https://github.com/capslock321/aiomojang.git
