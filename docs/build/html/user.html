@@ -84,12 +84,8 @@
               <p class="caption"><span class="caption-text">Documenation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">User Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#player">Player</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#users">Users</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#player">Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#users">Users</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="renders.html">Render Documentation</a></li>
@@ -184,15 +180,13 @@ This section has 2 classes, Users and Players.</p>
 <div class="section" id="player">
 <h2>Player<a class="headerlink" href="#player" title="Permalink to this headline">¶</a></h2>
 <p>This focuses on individual players, and will take only one name.</p>
-<div class="toctree-wrapper compound">
-</div>
 <dl class="py class">
-<dt id="user.Player">
-<em class="property">class </em><code class="sig-prename descclassname">user.</code><code class="sig-name descname">Player</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">profiles</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">at</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user.Player" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.user.Player">
+<em class="property">class </em><code class="sig-prename descclassname">aiomojang.user.</code><code class="sig-name descname">Player</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">profiles</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">at</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.user.Player" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets information on a user’s profile.</p>
 <dl class="py attribute">
-<dt id="user.Player.profile">
-<code class="sig-name descname">profile</code><a class="headerlink" href="#user.Player.profile" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.user.Player.profile">
+<code class="sig-name descname">profile</code><a class="headerlink" href="#aiomojang.user.Player.profile" title="Permalink to this definition">¶</a></dt>
 <dd><p>The user’s profile you want to search up, eg. User(“SomeRandomPerson”)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -202,8 +196,8 @@ This section has 2 classes, Users and Players.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="user.Player.at">
-<code class="sig-name descname">at</code><a class="headerlink" href="#user.Player.at" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.user.Player.at">
+<code class="sig-name descname">at</code><a class="headerlink" href="#aiomojang.user.Player.at" title="Permalink to this definition">¶</a></dt>
 <dd><p>The person who had the name at the given timestamp. Defaults to 0</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -213,32 +207,32 @@ This section has 2 classes, Users and Players.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="user.Player.get_history">
-<em class="property">async </em><code class="sig-name descname">get_history</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#user.Player.get_history" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.user.Player.get_history">
+<em class="property">async </em><code class="sig-name descname">get_history</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#aiomojang.user.Player.get_history" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the name history for the user.
 :returns: Returns the name history for the given user at the given timestamp.
 :rtype: dict</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="user.Player.is_demo">
-<em class="property">property </em><code class="sig-name descname">is_demo</code><a class="headerlink" href="#user.Player.is_demo" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.user.Player.is_demo">
+<em class="property">property </em><code class="sig-name descname">is_demo</code><a class="headerlink" href="#aiomojang.user.Player.is_demo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns if the account is a demo account (unpaid).
 :returns: Returns True if the account is a demo account (unpaid).
 :rtype: bool</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="user.Player.is_legacy">
-<em class="property">property </em><code class="sig-name descname">is_legacy</code><a class="headerlink" href="#user.Player.is_legacy" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.user.Player.is_legacy">
+<em class="property">property </em><code class="sig-name descname">is_legacy</code><a class="headerlink" href="#aiomojang.user.Player.is_legacy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns if the account is legacy.
 :returns: Returns True if the account is legacy.
 :rtype: bool</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="user.Player.name">
-<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#user.Player.name" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.user.Player.name">
+<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#aiomojang.user.Player.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the name for the user.
 :returns: Returns the name of the user.
 :rtype: str</p>
@@ -250,8 +244,8 @@ This section has 2 classes, Users and Players.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="user.Player.uuid">
-<em class="property">property </em><code class="sig-name descname">uuid</code><a class="headerlink" href="#user.Player.uuid" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.user.Player.uuid">
+<em class="property">property </em><code class="sig-name descname">uuid</code><a class="headerlink" href="#aiomojang.user.Player.uuid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the uuid for the user.
 :returns: Returns the uuid of the user.
 :rtype: str</p>
@@ -269,11 +263,9 @@ This section has 2 classes, Users and Players.</p>
 <h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
 <p>This class focuses on getting information on multiple users.
 As such, it can take multiple users in the constructor and returns a list of the requested information.</p>
-<div class="toctree-wrapper compound">
-</div>
 <dl class="py class">
-<dt id="user.Users">
-<em class="property">class </em><code class="sig-prename descclassname">user.</code><code class="sig-name descname">Users</code><a class="headerlink" href="#user.Users" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.user.Users">
+<em class="property">class </em><code class="sig-prename descclassname">aiomojang.user.</code><code class="sig-name descname">Users</code><a class="headerlink" href="#aiomojang.user.Users" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>

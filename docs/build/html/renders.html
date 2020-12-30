@@ -84,7 +84,10 @@
               <p class="caption"><span class="caption-text">Documenation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="user.html">User Documentation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Render Documentation</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Render Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#render">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#skin">Skin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cape">Cape</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status Documentation</a></li>
@@ -157,15 +160,41 @@
             
   <div class="section" id="render-documentation">
 <h1>Render Documentation<a class="headerlink" href="#render-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+<p>This class focuses on player apparel, specifically a player’s skins and capes.</p>
+<p>This does not include optifine capes.</p>
+<p><strong>Basic Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">aiomojang</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get_user_skins</span><span class="p">():</span>
+    <span class="c1"># If you want a user&#39;s cape, you can run aiomojang.Cape() instead.</span>
+    <span class="n">skin</span> <span class="o">=</span> <span class="n">aiomojang</span><span class="o">.</span><span class="n">Skin</span><span class="p">(</span><span class="s2">&quot;Hypermnesia&quot;</span><span class="p">)</span>
+    <span class="c1"># This may be confusing, but by passing in a user&#39;s name, you are getting their skin.</span>
+    <span class="c1"># You can get a skins url using skin.url()</span>
+    <span class="c1"># If you only need the last part of the link, you can do skin.id()</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">skin</span><span class="o">.</span><span class="n">url</span><span class="p">()</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">get_user_skins</span><span class="p">())</span>  <span class="c1"># Running the function</span>
+</pre></div>
 </div>
+<div class="section" id="render">
+<h2>Render<a class="headerlink" href="#render" title="Permalink to this headline">¶</a></h2>
+<p>The base class, it handles things other than skins and capes such as:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A user’s uuid.</p></li>
+<li><p>A user’s name</p></li>
+<li><p>Date the information was accessed.</p></li>
+<li><p>The base64 signature if enabled.</p></li>
+</ul>
+</div></blockquote>
 <dl class="py class">
-<dt id="renders.Render">
-<em class="property">class </em><code class="sig-prename descclassname">renders.</code><code class="sig-name descname">Render</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player</span></em>, <em class="sig-param"><span class="n">unsigned</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#renders.Render" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Render">
+<em class="property">class </em><code class="sig-prename descclassname">aiomojang.renders.</code><code class="sig-name descname">Render</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player</span></em>, <em class="sig-param"><span class="n">unsigned</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.renders.Render" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets information on a skin or cape.</p>
 <dl class="py attribute">
-<dt id="renders.Render.player">
-<code class="sig-name descname">player</code><a class="headerlink" href="#renders.Render.player" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Render.player">
+<code class="sig-name descname">player</code><a class="headerlink" href="#aiomojang.renders.Render.player" title="Permalink to this definition">¶</a></dt>
 <dd><p>The user’s profile you want to search up.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -175,8 +204,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="renders.Render.unsigned">
-<code class="sig-name descname">unsigned</code><a class="headerlink" href="#renders.Render.unsigned" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Render.unsigned">
+<code class="sig-name descname">unsigned</code><a class="headerlink" href="#aiomojang.renders.Render.unsigned" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the request is unsigned.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -186,32 +215,32 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="renders.Render.profile_id">
-<em class="property">async </em><code class="sig-name descname">profile_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renders.Render.profile_id" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Render.profile_id">
+<em class="property">async </em><code class="sig-name descname">profile_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.renders.Render.profile_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the profile’s uuid for the user being requested.
 :returns: The players uuid.
 :rtype: str</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="renders.Render.profile_name">
-<em class="property">async </em><code class="sig-name descname">profile_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renders.Render.profile_name" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Render.profile_name">
+<em class="property">async </em><code class="sig-name descname">profile_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.renders.Render.profile_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the profile’s name for the user being requested.
 :returns: The players name.
 :rtype: str</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="renders.Render.raw">
-<em class="property">async </em><code class="sig-name descname">raw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renders.Render.raw" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Render.raw">
+<em class="property">async </em><code class="sig-name descname">raw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.renders.Render.raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns raw json for a skin or a cape
 :returns: The raw data.
 :rtype: dict</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="renders.Render.signature">
-<em class="property">async </em><code class="sig-name descname">signature</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renders.Render.signature" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Render.signature">
+<em class="property">async </em><code class="sig-name descname">signature</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.renders.Render.signature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the requester’s base64 signature.</p>
 <p>Will only work if unsigned is False.
 :returns: The base64 signature.
@@ -219,8 +248,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="renders.Render.timestamp">
-<em class="property">async </em><code class="sig-name descname">timestamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renders.Render.timestamp" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Render.timestamp">
+<em class="property">async </em><code class="sig-name descname">timestamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.renders.Render.timestamp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the formatted timestamp in which the data has been requested at.
 :returns: The formatted timestamp.
 :rtype: str</p>
@@ -228,12 +257,16 @@
 
 </dd></dl>
 
+</div>
+<div class="section" id="skin">
+<h2>Skin<a class="headerlink" href="#skin" title="Permalink to this headline">¶</a></h2>
+<p>This class focuses on the player’s skin.</p>
 <dl class="py class">
-<dt id="renders.Skin">
-<em class="property">class </em><code class="sig-prename descclassname">renders.</code><code class="sig-name descname">Skin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player</span></em>, <em class="sig-param"><span class="n">unsigned</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#renders.Skin" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Skin">
+<em class="property">class </em><code class="sig-prename descclassname">aiomojang.renders.</code><code class="sig-name descname">Skin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player</span></em>, <em class="sig-param"><span class="n">unsigned</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.renders.Skin" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
-<dt id="renders.Skin.id">
-<em class="property">property </em><code class="sig-name descname">id</code><a class="headerlink" href="#renders.Skin.id" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Skin.id">
+<em class="property">property </em><code class="sig-name descname">id</code><a class="headerlink" href="#aiomojang.renders.Skin.id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the skin render id.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -246,8 +279,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="renders.Skin.url">
-<em class="property">async </em><code class="sig-name descname">url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renders.Skin.url" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Skin.url">
+<em class="property">async </em><code class="sig-name descname">url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.renders.Skin.url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the skin render url.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -261,12 +294,16 @@
 
 </dd></dl>
 
+</div>
+<div class="section" id="cape">
+<h2>Cape<a class="headerlink" href="#cape" title="Permalink to this headline">¶</a></h2>
+<p>This class focuses on the player’s cape.</p>
 <dl class="py class">
-<dt id="renders.Cape">
-<em class="property">class </em><code class="sig-prename descclassname">renders.</code><code class="sig-name descname">Cape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player</span></em>, <em class="sig-param"><span class="n">unsigned</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#renders.Cape" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Cape">
+<em class="property">class </em><code class="sig-prename descclassname">aiomojang.renders.</code><code class="sig-name descname">Cape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player</span></em>, <em class="sig-param"><span class="n">unsigned</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.renders.Cape" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
-<dt id="renders.Cape.id">
-<em class="property">property </em><code class="sig-name descname">id</code><a class="headerlink" href="#renders.Cape.id" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Cape.id">
+<em class="property">property </em><code class="sig-name descname">id</code><a class="headerlink" href="#aiomojang.renders.Cape.id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the cape render id.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -279,8 +316,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="renders.Cape.url">
-<em class="property">async </em><code class="sig-name descname">url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renders.Cape.url" title="Permalink to this definition">¶</a></dt>
+<dt id="aiomojang.renders.Cape.url">
+<em class="property">async </em><code class="sig-name descname">url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiomojang.renders.Cape.url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the cape render url.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -294,6 +331,7 @@
 
 </dd></dl>
 
+</div>
 </div>
 
 
