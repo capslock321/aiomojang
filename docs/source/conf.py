@@ -12,8 +12,9 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../aiomojang'))
-sys.path.append(os.path.abspath('..'))
+current = os.path.dirname(__file__)
+new_path = os.path.abspath(os.path.join(current, "../../aiomojang"))
+sys.path.insert(0, new_path)
 
 
 # -- Project information -----------------------------------------------------
