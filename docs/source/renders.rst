@@ -5,11 +5,11 @@ Render Documentation
    :maxdepth: 2
    :caption: Home
 
-.. autoclass:: renders.Render
+.. autoclass:: aiomojang.renders.Render
     :members:
 
-.. autoclass:: renders.Skin
+.. autoclass:: aiomojang.renders.Skin
     :members:
 
-.. autoclass:: renders.Cape
+.. autoclass:: aiomojang.renders.Cape
     :members:
