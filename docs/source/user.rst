@@ -28,7 +28,7 @@ This focuses on individual players, and will take only one name.
 
 .. toctree::
 
-.. autoclass:: user.Player
+.. autoclass:: aiomojang.user.Player
     :members:
 
 Users
