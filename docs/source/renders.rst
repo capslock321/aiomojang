@@ -38,12 +38,12 @@ Skin
 ---------------------
 This class focuses on the player's skin.
 
-.. autoclass:: renders.Skin
+.. autoclass:: aiomojang.renders.Skin
     :members:
 
 Cape
 ---------------------
 This class focuses on the player's cape.
 
-.. autoclass:: renders.Cape
+.. autoclass:: aiomojang.renders.Cape
     :members:
