@@ -22,12 +22,16 @@ This section has 2 classes, Users and Players.
     asyncio.run(get_user_history())  # Running the function
 
 
+
 Player
 ------------------
 This focuses on individual players, and will take only one name.
 
-.. autoclass:: aiomojang.user.Player
-    :members:
+.. automodule:: user
+    :exclude: user.Player
+
+    .. autoclass:: user.Player
+        :members:
 
 Users
 ------------------
@@ -35,5 +39,6 @@ Users
 This class focuses on getting information on multiple users.
 As such, it can take multiple users in the constructor and returns a list of the requested information.
 
-.. autoclass:: aiomojang.user.Users
-    :members:
+    .. autoclass:: user.Users
+        :members:
+
