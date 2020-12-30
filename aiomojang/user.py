@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from aiomojang.exceptions import BadRequestException, ApiException
+from .exceptions import BadRequestException, ApiException
 import aiohttp
 import re
 from typing import Optional
