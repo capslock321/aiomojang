@@ -1,12 +1,17 @@
 .. image:: https://readthedocs.org/projects/aiomojang/badge/?version=master 
+   :target: https://aiomojang.readthedocs.io/en/master/?badge=master
    :alt: Documentation Status 
 .. image:: https://img.shields.io/pypi/v/aiomojang?color=red&label=aiomojang 
+   :target: https://img.shields.io/pypi/v/aiomojang?color=red&label=aiomojang 
    :alt: PyPI 
 .. image:: https://img.shields.io/github/release-date/capslock321/aiomojang  
+   :target: https://img.shields.io/github/release-date/capslock321/aiomojang  
    :alt: GitHub Release Date 
 .. image:: https://img.shields.io/github/license/capslock321/aiomojang 
+   :target: https://img.shields.io/github/license/capslock321/aiomojang 
    :alt: GitHub
 .. image:: https://img.shields.io/github/commit-activity/w/capslock321/aiomojang   
+   :target: https://img.shields.io/github/commit-activity/w/capslock321/aiomojang   
    :alt: GitHub commit activity
 
 Overview
