@@ -9,6 +9,7 @@ Welcome to Aiomojang's Documentation!
 .. note::
 
    This module does not include anything that requires you to login due to the difficulty of testing it.
+   **(This may be added at a later date)**
 
 Aiomojang is a asynchronous wrapper of Mojang's api.
 
