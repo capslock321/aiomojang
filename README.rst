@@ -32,8 +32,6 @@ The best way to install this is to user pip to install this repository.
 .. code-block:: bash
     
     python3 -m pip install -U aiomojang
-    
-If you wish to get the latest version use this instead:
 
 **Latest Release:**
 
