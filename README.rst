@@ -27,36 +27,19 @@ Installation
 ===============================
 The best way to install this is to user pip to install this repository.
 
-Windows:
-------------------
-
 **Stable Release:**
 
 .. code-block:: bash
     
     python3 -m pip install -U aiomojang
     
-**Latest Release:**
-
-.. code-block:: bash
-    
-    python -3 pip install -U git+https://github.com/capslock321/aiomojang.git
-    
-Unix:
-------------------
-
-**Stable Release:**
-
-.. code-block:: bash
-    
-    python3 -m pip install -U aiomojang
+ If you wish to get the latest version use this instead:
 
 **Latest Release:**
 
 .. code-block:: bash
-    
-    pip3 install -U git+https://github.com/capslock321/aiomojang.git
-    
+   
+   python3 -m pip install git+https://github.com/capslock321/aiomojang.git
     
 Basic Code Usage:
 ===============================
