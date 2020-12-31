@@ -4,7 +4,7 @@ setuptools.setup(
     name="aiomojang",
     version="0.3",
     author="capslock321",
-    description="An asynchronous python wrapper of Mojangs API",
+    description="An asynchronous python wrapper of Mojang's API",
     url="https://github.com/capslock321/aiomojang/",
     packages=setuptools.find_packages(),
     classifiers=[
