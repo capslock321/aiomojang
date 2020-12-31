@@ -69,7 +69,9 @@ If you have any issues with this wrapper, please open a issue on this repository
 
 Contribution
 ================================
-If you wish to contribute, please open a Pull Request on this repository.
+If you wish to contribute, please open a pull request on this repository.
+:raw-html:`<br />`
+If you want to see what I am working on now, check the projects tab on this repository.
 
 Licence
 ================================
