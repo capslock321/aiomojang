@@ -6,6 +6,8 @@
    :alt: GitHub Release Date 
 .. image:: https://img.shields.io/github/license/capslock321/aiomojang 
    :alt: GitHub
+.. image:: https://img.shields.io/github/commit-activity/w/capslock321/aiomojang   
+   :alt: GitHub commit activity
 
 Overview
 ===============================
