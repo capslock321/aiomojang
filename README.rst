@@ -34,7 +34,7 @@ Windows:
 
 .. code-block:: bash
     
-    pip install -U aiomojang
+    python3 -m pip install -U aiomojang
     
 **Latest Release:**
 
@@ -49,7 +49,7 @@ Unix:
 
 .. code-block:: bash
     
-    pip3 install -U aiomojang
+    python3 -m pip install -U aiomojang
 
 **Latest Release:**
 
