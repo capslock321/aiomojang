@@ -24,9 +24,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from .exceptions import BadRequestException, ApiException
+from aiomojang.exceptions import BadRequestException, ApiException
 import aiohttp
-import re
+import asyncio
+import datetime
+import json
+import base64
 from typing import Optional
 
 
@@ -99,14 +102,24 @@ class Player:
         self.at = at
 
     @staticmethod
+    async def _get_player_id(player):
+        async with aiohttp.ClientSession() as session:
+            payload = [
+                player
+            ]
+            async with session.post(f'https://api.mojang.com/profiles/minecraft', json=payload) as resp:
+                data = await resp.json()
+                return data[0]['id']
+
+    @staticmethod
     async def _process_uuid(uuid):
         """
           Removes - from the given statement, allowing input of uuids with - in them.
           Returns:
               str: The processed uuid.
         """
-        uuid = re.sub(r"({-}*)", '', uuid)  # remove - from the uuid if there is any
-        return uuid
+        uuid = uuid.strip('-')  # remove - from the uuid if there is any
+        return uuid.replace('-', '')
 
     async def _create_connection(self, base):
         """
@@ -195,4 +208,78 @@ class Player:
         if 'demo' in connection:
             return True
         return False
+
+    async def _get_render_information(self, query, unsigned):
+        """
+          Creates a connection with Mojang's API.
+          Attributes:
+              query: The player to process
+              unsigned: The mode in which to access the information.
+          Returns:
+              dict: The json that is returned from Mojang.
+        """
+        async with aiohttp.ClientSession() as session:
+            async with session.get('https://sessionserver.mojang.com/session/minecraft/profile/'
+                                   f'{await self._process_uuid(query)}?unsigned={unsigned}') as resp:
+                return await resp.json()
+
+    async def get_raw_data(self, unsigned: bool = True):
+        """
+          Returns raw json for a skin or a cape
+          Attributes:
+              unsigned: Defaults to True, the mod in which to access the information in.
+          Returns:
+              dict: The raw data.
+        """
+        try:
+            data = await self._get_render_information(self.profiles, unsigned)
+            skin = base64.b64decode(data['properties'][0]['value'])
+        except KeyError:
+            gp = await self._get_player_id(self.profiles)  # converts name to uuid
+            data = await self._get_render_information(gp, unsigned)
+            skin = base64.b64decode(data['properties'][0]['value'])
+        return json.loads(skin.decode('ascii'))
+
+    async def get_skin(self, unsigned: Optional[bool] = False):
+        """
+        Get's the current skin that the player has on.
+        Attributes:
+              unsigned: Defaults to True, the mod in which to access the information in.
+        Returns:
+            str: The link to their skin.
+        """
+        data = await self.get_raw_data(unsigned)
+        return data['textures']['SKIN']['url']
+
+    async def get_cape(self, unsigned: Optional[bool] = False):
+        """
+        Get's the current cape that the player has on.
+        Attributes:
+              unsigned: Defaults to True, the mod in which to access the information in.
+        Returns:
+            str: The link to their cape.
+        """
+        data = self.get_raw_data(unsigned)
+        return data
+
+    async def signature(self, unsigned: Optional[bool] = False):
+        """
+          Returns the requester's base64 signature.
+
+          Will only work if unsigned is False.
+          Returns:
+              str: The base64 signature.
+        """
+        gp = await self._get_player_id(self.profiles)  # converts name to uuid
+        data = await self._get_render_information(gp, unsigned)
+        return data['properties'][0]['signature']
+
+    async def timestamp(self, unsigned: Optional[bool] = False):
+        """
+              Returns the formatted timestamp in which the data has been requested at.
+              Returns:
+                  str: The formatted timestamp.
+        """
+        info = await self.get_raw_data(unsigned)
+        return datetime.datetime.utcfromtimestamp(info['timestamp'] / 1e3).strftime('%Y-%m-%d %H:%M:%S')
 
