@@ -72,6 +72,7 @@ Contribution
 If you wish to contribute, please open a pull request on this repository.
 :raw-html:`<br />`
 If you want to see what I am working on now, check the projects tab on this repository.
+I am currently working on: **Auth stuff**
 
 Licence
 ================================
