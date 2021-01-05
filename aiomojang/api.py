@@ -3,7 +3,7 @@
 """
 MIT License
 
-Copyright (c) 2020 capslock321
+Copyright (c) 2021 capslock321
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -33,7 +33,7 @@ import base64
 from typing import Optional
 
 
-class Users:
+class Players:
     """
     Gets information on a list of users.
     """
@@ -103,6 +103,11 @@ class Player:
 
     @staticmethod
     async def _get_player_id(player):
+        """
+          Gets the uuid with a name
+          Returns:
+              str: The uuid.
+        """
         async with aiohttp.ClientSession() as session:
             payload = [
                 player
@@ -282,4 +287,3 @@ class Player:
         """
         info = await self.get_raw_data(unsigned)
         return datetime.datetime.utcfromtimestamp(info['timestamp'] / 1e3).strftime('%Y-%m-%d %H:%M:%S')
-
