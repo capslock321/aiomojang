@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; aiomojang 0.3 documentation</title>
+  <title>Index &mdash; aiomojang 0.5 documentation</title>
   
 
   
@@ -86,6 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stats.html">Statistics Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="blocked.html">Blocked Servers Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth.html">Authentication Documentation</a></li>
 </ul>
 
             
@@ -156,8 +157,11 @@
  <a href="#A"><strong>A</strong></a>
  | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
@@ -165,20 +169,25 @@
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
  
 </div>
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="auth.html#aiomojang.auth.Authorization.access_token">access_token() (aiomojang.auth.Authorization property)</a>
+</li>
       <li><a href="status.html#aiomojang.status.Status.account">account() (aiomojang.status.Status property)</a>
 </li>
       <li><a href="status.html#aiomojang.status.Status.api">api() (aiomojang.status.Status property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.user.Player.at">at (aiomojang.user.Player attribute)</a>
+      <li><a href="user.html#aiomojang.api.Player.at">at (aiomojang.api.Player attribute)</a>
 </li>
       <li><a href="status.html#aiomojang.status.Status.auth">auth() (aiomojang.status.Status property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization">Authorization (class in aiomojang.auth)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -196,29 +205,65 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="renders.html#aiomojang.renders.Cape">Cape (class in aiomojang.renders)</a>
 </li>
+      <li><a href="auth.html#aiomojang.auth.User.change_name">change_name() (aiomojang.auth.User method)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.User.change_skin">change_skin() (aiomojang.auth.User method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="auth.html#aiomojang.auth.Authorization.client_token">client_token() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.created_at">created_at() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.ctoken">ctoken (aiomojang.auth.Authorization attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="auth.html#aiomojang.auth.Authorization.dob">dob() (aiomojang.auth.Authorization property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="auth.html#aiomojang.auth.Authorization.email">email() (aiomojang.auth.Authorization property)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="auth.html#aiomojang.auth.Authorization.game">game (aiomojang.auth.Authorization attribute)</a>
+</li>
       <li><a href="blocked.html#aiomojang.misc.BlockedServers.get_blocked_servers">get_blocked_servers() (aiomojang.misc.BlockedServers class method)</a>
 </li>
-      <li><a href="user.html#aiomojang.user.Player.get_history">get_history() (aiomojang.user.Player method)</a>
+      <li><a href="user.html#aiomojang.api.Player.get_cape">get_cape() (aiomojang.api.Player method)</a>
 </li>
-      <li><a href="user.html#aiomojang.user.Users.get_names">get_names() (aiomojang.user.Users method)</a>
+      <li><a href="user.html#aiomojang.api.Player.get_history">get_history() (aiomojang.api.Player method)</a>
 </li>
-      <li><a href="stats.html#aiomojang.misc.Statistics.get_raw_stats">get_raw_stats() (aiomojang.misc.Statistics method)</a>
+      <li><a href="user.html#aiomojang.api.Players.get_names">get_names() (aiomojang.api.Players method)</a>
+</li>
+      <li><a href="user.html#aiomojang.api.Player.get_raw_data">get_raw_data() (aiomojang.api.Player method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="stats.html#aiomojang.misc.Statistics.get_raw_stats">get_raw_stats() (aiomojang.misc.Statistics method)</a>
+</li>
       <li><a href="stats.html#aiomojang.misc.Statistics.get_sale_velocity">get_sale_velocity() (aiomojang.misc.Statistics method)</a>
 </li>
       <li><a href="stats.html#aiomojang.misc.Statistics.get_sales_today">get_sales_today() (aiomojang.misc.Statistics method)</a>
 </li>
+      <li><a href="user.html#aiomojang.api.Player.get_skin">get_skin() (aiomojang.api.Player method)</a>
+</li>
       <li><a href="stats.html#aiomojang.misc.Statistics.get_total">get_total() (aiomojang.misc.Statistics method)</a>
 </li>
-      <li><a href="user.html#aiomojang.user.Users.get_uuids">get_uuids() (aiomojang.user.Users method)</a>
+      <li><a href="user.html#aiomojang.api.Players.get_uuids">get_uuids() (aiomojang.api.Players method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -226,17 +271,49 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="renders.html#aiomojang.renders.Cape.id">id() (aiomojang.renders.Cape property)</a>
+      <li><a href="auth.html#aiomojang.auth.Authorization.id">id() (aiomojang.auth.Authorization property)</a>
 
       <ul>
+        <li><a href="renders.html#aiomojang.renders.Cape.id">(aiomojang.renders.Cape property)</a>
+</li>
         <li><a href="renders.html#aiomojang.renders.Skin.id">(aiomojang.renders.Skin property)</a>
 </li>
       </ul></li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.invalidate">invalidate() (aiomojang.auth.Authorization method)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.ip">ip() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.is_blocked">is_blocked() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="user.html#aiomojang.api.Player.is_demo">is_demo() (aiomojang.api.Player property)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.user.Player.is_demo">is_demo() (aiomojang.user.Player property)</a>
+      <li><a href="auth.html#aiomojang.auth.Authorization.is_email_verified">is_email_verified() (aiomojang.auth.Authorization property)</a>
 </li>
-      <li><a href="user.html#aiomojang.user.Player.is_legacy">is_legacy() (aiomojang.user.Player property)</a>
+      <li><a href="user.html#aiomojang.api.Player.is_legacy">is_legacy() (aiomojang.api.Player property)</a>
+
+      <ul>
+        <li><a href="auth.html#aiomojang.auth.Authorization.is_legacy">(aiomojang.auth.Authorization property)</a>
+</li>
+      </ul></li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.is_migrated">is_migrated() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.is_paid">is_paid() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.is_secured">is_secured() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.is_suspended">is_suspended() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.is_verified_by_parent">is_verified_by_parent() (aiomojang.auth.Authorization property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="auth.html#aiomojang.auth.Authorization.login">login() (aiomojang.auth.Authorization method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -244,10 +321,14 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="status.html#aiomojang.status.Status.minecraft">minecraft() (aiomojang.status.Status property)</a>
+      <li><a href="auth.html#aiomojang.auth.Authorization.migrated_at">migrated_at() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.migrated_from">migrated_from() (aiomojang.auth.Authorization property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="status.html#aiomojang.status.Status.minecraft">minecraft() (aiomojang.status.Status property)</a>
+</li>
       <li><a href="status.html#aiomojang.status.Status.mojang">mojang() (aiomojang.status.Status property)</a>
 </li>
   </ul></td>
@@ -256,21 +337,33 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.user.Player.name">name() (aiomojang.user.Player property)</a>
+      <li><a href="user.html#aiomojang.api.Player.name">name() (aiomojang.api.Player property)</a>
+
+      <ul>
+        <li><a href="auth.html#aiomojang.auth.Authorization.name">(aiomojang.auth.Authorization property)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="auth.html#aiomojang.auth.Authorization.password">password (aiomojang.auth.Authorization attribute)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.password_changed_at">password_changed_at() (aiomojang.auth.Authorization property)</a>
+</li>
       <li><a href="renders.html#aiomojang.renders.Render.player">player (aiomojang.renders.Render attribute)</a>
 </li>
-      <li><a href="user.html#aiomojang.user.Player">Player (class in aiomojang.user)</a>
+      <li><a href="user.html#aiomojang.api.Player">Player (class in aiomojang.api)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.user.Player.profile">profile (aiomojang.user.Player attribute)</a>
+      <li><a href="user.html#aiomojang.api.Players">Players (class in aiomojang.api)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.preferred_language">preferred_language() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="user.html#aiomojang.api.Player.profile">profile (aiomojang.api.Player attribute)</a>
 </li>
       <li><a href="renders.html#aiomojang.renders.Render.profile_id">profile_id() (aiomojang.renders.Render method)</a>
 </li>
@@ -284,9 +377,17 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="renders.html#aiomojang.renders.Render.raw">raw() (aiomojang.renders.Render method)</a>
 </li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.refresh">refresh() (aiomojang.auth.Authorization method)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.registered_at">registered_at() (aiomojang.auth.Authorization property)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="renders.html#aiomojang.renders.Render">Render (class in aiomojang.renders)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.request_user">request_user (aiomojang.auth.Authorization attribute)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.User.reset_skin">reset_skin() (aiomojang.auth.User method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -294,14 +395,22 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="auth.html#aiomojang.auth.User.security_questions">security_questions() (aiomojang.auth.User static method)</a>
+</li>
       <li><a href="status.html#aiomojang.status.Status.session">session() (aiomojang.status.Status property)</a>
 </li>
       <li><a href="status.html#aiomojang.status.Status.sessionserver">sessionserver() (aiomojang.status.Status property)</a>
 </li>
-      <li><a href="renders.html#aiomojang.renders.Render.signature">signature() (aiomojang.renders.Render method)</a>
+      <li><a href="user.html#aiomojang.api.Player.signature">signature() (aiomojang.api.Player method)</a>
+
+      <ul>
+        <li><a href="renders.html#aiomojang.renders.Render.signature">(aiomojang.renders.Render method)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="auth.html#aiomojang.auth.Authorization.signout">signout() (aiomojang.auth.Authorization method)</a>
+</li>
       <li><a href="renders.html#aiomojang.renders.Skin">Skin (class in aiomojang.renders)</a>
 </li>
       <li><a href="stats.html#aiomojang.misc.Statistics">Statistics (class in aiomojang.misc)</a>
@@ -316,9 +425,17 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="status.html#aiomojang.status.Status.textures">textures() (aiomojang.status.Status property)</a>
 </li>
+      <li><a href="user.html#aiomojang.api.Player.timestamp">timestamp() (aiomojang.api.Player method)</a>
+
+      <ul>
+        <li><a href="renders.html#aiomojang.renders.Render.timestamp">(aiomojang.renders.Render method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="renders.html#aiomojang.renders.Render.timestamp">timestamp() (aiomojang.renders.Render method)</a>
+      <li><a href="auth.html#aiomojang.auth.Authorization.twitch_access_token">twitch_access_token() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.twitch_oauth_token">twitch_oauth_token() (aiomojang.auth.Authorization property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -326,7 +443,11 @@
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="auth.html#aiomojang.auth.Authorization.uname">uname() (aiomojang.auth.Authorization property)</a>
+</li>
       <li><a href="renders.html#aiomojang.renders.Render.unsigned">unsigned (aiomojang.renders.Render attribute)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.User.upload_skin">upload_skin() (aiomojang.auth.User method)</a>
 </li>
       <li><a href="renders.html#aiomojang.renders.Cape.url">url() (aiomojang.renders.Cape method)</a>
 
@@ -336,9 +457,23 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="user.html#aiomojang.user.Users">Users (class in aiomojang.user)</a>
+      <li><a href="auth.html#aiomojang.auth.User">User (class in aiomojang.auth)</a>
 </li>
-      <li><a href="user.html#aiomojang.user.Player.uuid">uuid() (aiomojang.user.Player property)</a>
+      <li><a href="auth.html#aiomojang.auth.Authorization.user_id">user_id() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.user_identifier">user_identifier() (aiomojang.auth.Authorization property)</a>
+</li>
+      <li><a href="auth.html#aiomojang.auth.Authorization.username">username (aiomojang.auth.Authorization attribute)</a>
+</li>
+      <li><a href="user.html#aiomojang.api.Player.uuid">uuid() (aiomojang.api.Player property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="auth.html#aiomojang.auth.Authorization.validate">validate() (aiomojang.auth.Authorization method)</a>
 </li>
   </ul></td>
 </tr></table>

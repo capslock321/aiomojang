@@ -8,7 +8,8 @@ Welcome to Aiomojang's Documentation!
 
 .. note::
 
-   This module does not include anything that requires you to login due to the difficulty of testing it.
+   This is a full API wrapper, but anything that requires you to login has not been thoroughly tested due to the difficulty of doing so.
+   Use at your own risk.
 
 Aiomojang is a asynchronous wrapper of Mojang's api.
 
@@ -72,6 +73,8 @@ Basic Code Usage:
    ./stats
 
    ./blocked
+
+   ./auth
 
 
 Miscellaneous
