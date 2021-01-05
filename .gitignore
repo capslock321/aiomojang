@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 
 # Other files
-../.DS_Store
-../.idea/
+.DS_Store
+.idea/
 
