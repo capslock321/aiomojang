@@ -42,7 +42,7 @@ The best way to install this is to user pip to install this repository.
 Basic Code Usage:
 ===============================
 
-**Documentation can be found at:** https://aiomojang.readthedocs.io/en/latest/
+**Documentation can be found at:** https://aiomojang.readthedocs.io/en/master/
 
 .. code-block:: python
     
