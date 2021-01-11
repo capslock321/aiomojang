@@ -43,6 +43,7 @@ Basic Code Usage:
 ===============================
 
 **Documentation can be found at:** https://aiomojang.readthedocs.io/en/master/
+**Examples can be found in the examples folder on this repository:** aiomojang/examples
 
 .. code-block:: python
     
