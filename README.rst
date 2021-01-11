@@ -73,7 +73,7 @@ If you wish to contribute, please open a pull request on this repository.
 :raw-html:`<br />`
 If you want to see what I am working on now, check the projects tab on this repository.
 :raw-html:`<br />`
-I am currently working on: **Testing**
+I am currently working on: **Nothing, if you need anything, just open a issue. I periodically check this repository.**
 
 Licence
 ================================
