@@ -44,7 +44,6 @@ Basic Code Usage:
 
 **Documentation can be found at:** https://aiomojang.readthedocs.io/en/master/
 :raw-html:`<br />`
-**Examples can be found in the examples folder on this repository:** https://github.com/capslock321/aiomojang/tree/master/examples
 
 .. code-block:: python
     
@@ -64,6 +63,8 @@ Basic Code Usage:
         # getting a user's uuid
         return await aiomojang.Player("Hypermnesia").uuid
         # Output: 7e2ad381193e40e2adfe8df266134d8c
+        
+**More examples can be found in the examples folder on this repository:** https://github.com/capslock321/aiomojang/tree/master/examples
         
 Issues:
 ================================
