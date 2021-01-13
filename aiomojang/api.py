@@ -150,6 +150,8 @@ class Player:
         """
         connection = await self._create_connection(f'user/profile/{self.profiles}/names')
         try:
+            if connection is None:
+                return None
             if 'error' in connection:
                 raise ApiException(f"{connection['errorMessage']}")
             return connection[len(connection) - 1]['name']
@@ -167,6 +169,8 @@ class Player:
         """
         connection = await self._create_connection(f'/users/profiles/minecraft/{self.profiles}?at={self.at}')
         try:
+            if connection is None:
+                return None
             if 'error' in connection:
                 raise ApiException(f"{connection['errorMessage']}")
             return connection['id']
@@ -180,6 +184,8 @@ class Player:
                dict: Returns the name history for the given user at the given timestamp.
         """
         connection = await self._create_connection(f'user/profile/{await self.uuid}/names')
+        if connection is None:
+            return None
         if 'error' in connection:
             raise ApiException(f"{connection['errorMessage']}")
         if num is None:
@@ -194,6 +200,8 @@ class Player:
                bool: Returns True if the account is legacy.
         """
         connection = await self._create_connection(f'/users/profiles/minecraft/{self.profiles}?at={self.at}')
+        if connection is None:
+            return None
         if 'error' in connection:
             raise ApiException(f"{connection['errorMessage']}")
         if 'legacy' in connection:
@@ -208,6 +216,8 @@ class Player:
                bool: Returns True if the account is a demo account (unpaid).
         """
         connection = await self._create_connection(f'/users/profiles/minecraft/{self.profiles}?at={self.at}')
+        if connection is None:
+            return None
         if 'error' in connection:
             raise ApiException(f"{connection['errorMessage']}")
         if 'demo' in connection:
