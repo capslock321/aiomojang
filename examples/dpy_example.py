@@ -17,14 +17,13 @@ class Example(commands.Cog):
         print("Bot is ready")
 
     @commands.command()  # Get information on a player.
-    async def mojang(self, ctx, player: str): 
+    async def mojang(self, ctx, player: str):
         profile = aiomojang.Player(player)
-        skin = aiomojang.Skin(player)
-        embed = discord.Embed(title = "Information on: ", color = discord.Colour.green())
-        embed.add_field(name = "Player's name: ", value = player)  # Because doing profile.name will raise an error.
-        embed.add_field(name = "Player's uuid: ", value = await profile.uuid, inline = False)
-        embed.set_image(url = await skin.url())
-        await ctx.send(embed = embed)
+        embed = discord.Embed(title="Information on: ", color=discord.Colour.green())
+        embed.add_field(name="Player's name: ", value=player)  # Because doing profile.name will raise an error.
+        embed.add_field(name="Player's uuid: ", value=await profile.uuid, inline=False)
+        embed.set_image(url=await profile.get_skin())
+        await ctx.send(embed=embed)
 
     @commands.command()  # Name history command
     async def history(self, ctx, player: str):
