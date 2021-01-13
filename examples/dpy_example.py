@@ -19,12 +19,15 @@ class Example(commands.Cog):
     @commands.command()  # Get information on a player.
     async def mojang(self, ctx, player: str):
         profile = aiomojang.Player(player)
-        embed = discord.Embed(title="Information on: ", color=discord.Colour.green())
-        embed.add_field(name="Player's name: ", value=player)  # Because doing profile.name will raise an error.
-        embed.add_field(name="Player's uuid: ", value=await profile.uuid, inline=False)
-        embed.set_image(url=await profile.get_skin())
-        await ctx.send(embed=embed)
-
+        try:
+            embed = discord.Embed(title="Information on: ", color=discord.Colour.green())
+            embed.add_field(name="Player's name: ", value=player)  # Because doing profile.name will raise an error.
+            embed.add_field(name="Player's uuid: ", value=await profile.uuid, inline=False)
+            embed.set_image(url = await profile.get_skin())
+            await ctx.send(embed=embed)
+        except aiomojang.exceptions.ApiException:
+            return await ctx.send(f"No user with the name {player} was found.")
+        
     @commands.command()  # Name history command
     async def history(self, ctx, player: str):
         profile = aiomojang.Player(player)
