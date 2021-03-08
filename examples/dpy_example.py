@@ -4,8 +4,15 @@ from discord.ext import commands
 
 # This is a example cog using aiomojang.
 
-bot = commands.Bot(command_prefix = "!", case_insensitive = True)
+class Main(commands.Bot):
 
+    def __init__(self):
+        super(Main, self).__init__(command_prefix="!", case_insensitive = True)
+
+        self.add_cog(Example(self))
+
+    async def on_ready(self):
+        print(f'Logged in as: {self.bot.user.name}')
 
 class Example(commands.Cog):
 
@@ -41,9 +48,6 @@ class Example(commands.Cog):
 
 def setup(bot):
     bot.add_cog(Example(bot))
-    
 
-setup(bot)  # Due to running the file in the same file as the cog, i run setup here
-
-
+bot = Main()
 bot.run("TOKEN")
