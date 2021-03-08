@@ -150,7 +150,8 @@ class Skin(Render):
         """
         info = await self.raw()
         return info['textures']['SKIN']['url'][38:]
-
+    
+    @property
     async def url(self):
         """
           Returns the skin render url.
@@ -178,6 +179,7 @@ class Cape(Render):
         info = await self.raw()
         return info['textures']['CAPE']['url'][38:]
 
+    @property
     async def url(self):
         """
           Returns the cape render url.
