@@ -140,7 +140,6 @@ class Skin(Render):
         except KeyError:
             return "classic"
 
-    @property
     async def id(self):
         """
           Returns the skin render id.
@@ -151,7 +150,6 @@ class Skin(Render):
         info = await self.raw()
         return info['textures']['SKIN']['url'][38:]
     
-    @property
     async def url(self):
         """
           Returns the skin render url.
@@ -168,7 +166,6 @@ class Cape(Render):
     def __init__(self, player, unsigned: Optional[bool] = True):
         super().__init__(player, unsigned)
 
-    @property
     async def id(self):
         """
               Returns the cape render id.
@@ -179,7 +176,6 @@ class Cape(Render):
         info = await self.raw()
         return info['textures']['CAPE']['url'][38:]
 
-    @property
     async def url(self):
         """
           Returns the cape render url.
